@@ -1,9 +1,7 @@
 import React from 'react';
-import ArgentBankLogo from '../../designs/img/argentBankLogo.png';
 import IconChat from '../../designs/img/icon-chat.png';
 import IconMoney from '../../designs/img/icon-money.png';
 import IconSecurity from '../../designs/img/icon-security.png';
-import { Link } from "react-router-dom";
 
 export default function HomePage() { 
   return (
@@ -23,7 +21,7 @@ export default function HomePage() {
       <section className="features">
         <h2 className="sr-only">Features</h2>
         <div className="feature-item">
-          <img src={IconChat} alt="Chat Icon" className="feature-icon" /> {/* Assurez-vous que le chemin de l'image est correct */}
+          <img src={IconChat} alt="Chat Icon" className="feature-icon" /> 
           <h3 className="feature-item-title">You are our #1 priority</h3>
           <p>
             Need to talk to a representative? You can get in touch through our

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { setLogOut } from "../../redux/Reducers/UserAuthSlice"
 import TextInput from "../../components/TextInput/TextInput"
 import Button from "../../components/Button/Button"
-import signUpService from "../../Services/API/SignUpService"
+import signUpService from "../../API/SignUpService"
 
 export default function SignUp() {
     const [email, setEmail] = useState("")

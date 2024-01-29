@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom"
 import { setLogIn } from "../../redux/Reducers/UserAuthSlice"
 import TextInput from "../../components/TextInput/TextInput"
 import Button from "../../components/Button/Button"
-import signInService from "../../Services/API/SignInService"
+import signInService from "../../API/SignInService"
 
 export default function SignIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [checkBox, setCheckBox] = useState(false)
+    
 
     const navigate = useNavigate()
     const dispatch = useDispatch()

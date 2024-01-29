@@ -19,7 +19,12 @@ html {
   
   .bg-dark {
     background-color: #12002b;
-    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   
   .sr-only {

@@ -1,4 +1,3 @@
-// services/profileService.js
 
 const getProfileService = async (token) => {
   try {
