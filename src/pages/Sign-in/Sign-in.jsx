@@ -10,7 +10,6 @@ export default function SignIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [checkBox, setCheckBox] = useState(false)
-    const [error, setError] = useState(null)  // Ajout d'un état pour gérer les erreurs
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -18,17 +17,12 @@ export default function SignIn() {
     const fetchLogIn = async (e) => {
         e.preventDefault();
         try {
-            const response = await signInService(email, password);
-            if (!response.ok) {  // Vérification si la réponse est correcte
-                throw new Error("Connexion échouée");  // Génération d'une erreur si la connexion échoue
-            }
-            const token = response.body.token;
+            const data = await signInService(email, password);
+            const token = data.body.token;
             dispatch(setLogIn({ token }));
             navigate("/user");
-            setError(null);  // Réinitialisation de l'erreur
         } catch (err) {
-            console.error(err);
-            setError("Erreur lors de la connexion");  // Affichage d'un message d'erreur
+            console.log(err);
         }
     };
 
@@ -63,7 +57,6 @@ export default function SignIn() {
                         type="submit">
                         Sign In
                     </Button>
-                    {error && <p className="error-message">{error}</p>}
                 </form>
             </section>
         </main>
