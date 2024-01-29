@@ -253,6 +253,36 @@ paths:
           description: Internal Server Error
 
   /transactions/{transactionID}/category:
+    post:
+      tags:
+        - Accounts and Transactions Module
+      summary: Create transaction's category
+      description: API for creating the category of a transaction
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: transactionID
+          description: ID of a transaction
+          required: true
+          type: string
+        - in: body
+          name: category
+          description: Create transaction's category
+          required: true
+          schema:
+            $ref: '#/definitions/TransactionCategory'
+      responses:
+        '201':
+          description: Transaction's category created successfully
+          schema:
+            $ref: '#/definitions/TransactionCategory'
+        '401':
+          description: Unauthorized user
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
     put:
       tags:
         - Accounts and Transactions Module
@@ -277,6 +307,28 @@ paths:
           description: Transaction's category modified successfully
           schema:
             $ref: '#/definitions/TransactionCategory'
+        '401':
+          description: Unauthorized user
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+    delete:
+      tags:
+        - Accounts and Transactions Module
+      summary: Delete transaction's category
+      description: API for deleting the category of a transaction
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: transactionID
+          description: ID of a transaction
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Transaction's category deleted successfully
         '401':
           description: Unauthorized user
         '404':
